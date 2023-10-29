@@ -1,0 +1,153 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Reset CSS to remove default margins and paddings */
+    body,
+    h1,
+    h2,
+    p,
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Apply a background color and text color to the body */
+    body {
+      background-color: #f0f0f0;
+      /* Background color */
+      font-family: Arial, sans-serif;
+      /* Font family */
+      color: #333;
+      /* Text color */
+    }
+
+    /* Style the header */
+    header {
+      background-color: #007bff;
+      /* Header background color */
+      color: white;
+      /* Header text color */
+      text-align: center;
+      /* Center-align text */
+      padding: 20px;
+      /* Add padding to header */
+    }
+
+    /* Style the navigation menu */
+    nav {
+      background-color: #333;
+      /* Nav background color */
+    }
+
+    nav ul {
+      list-style-type: none;
+      /* Remove list bullets */
+      padding: 10px 0;
+      /* Add padding to the top and bottom */
+    }
+
+    nav li {
+      display: inline;
+      /* Display list items inline */
+      margin-right: 20px;
+      /* Add margin between menu items */
+    }
+
+    nav a {
+      text-decoration: none;
+      /* Remove underline from links */
+      color: white;
+      /* Link text color */
+      font-weight: bold;
+      /* Make links bold */
+    }
+
+    /* Style the sections */
+    section {
+      padding: 20px;
+      /* Add padding to sections */
+      background-color: white;
+      /* Section background color */
+      margin-bottom: 20px;
+      /* Add margin between sections */
+    }
+
+    /* Style the footer */
+    footer {
+      background-color: #333;
+      /* Footer background color */
+      color: white;
+      /* Footer text color */
+      text-align: center;
+      /* Center-align text */
+      padding: 10px 0;
+      /* Add padding to footer */
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Diabetni Tushunish va Boshqarish</h1>
+    <p>Diabet haqida foydali ma'lumotlar, tibbiy rasm va ko'p qo'shimcha</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="{% url 'home'%}">Bosh Sahifa</a></li>
+      <li><a href="{%url 'predict'%}">Diabetni Baholash</a></li>
+      <li><a href="#prevention">Profilaktika</a></li>
+      <li><a href="#resources">Manba</a></li>
+    </ul>
+  </nav>
+  <section id="about">
+    <h2>Foydalanish Yo'riqnomasi</h2>
+    <p>Bu ilova yordamida diabet riskini baholashingiz mumkin.</p>
+    <br>
+    <h2>Diabet Haqida</h2>
+    <p>Qandli diabet - bu inson qonida insulin gormoni etishmasligi yoki organizm ishlab chiqaradigan insulinni ishlatishda muammo bo'lganida (insulin qarshiligi) kelib chiqadigan holat. Shunga o'xshash nomga ega bo'lgan yana bir kasallik bor, diabet insipidus, ammo ular bog'liq emas. Odamlar "qandli diabet" deganda, ular odatda qandli diabetni anglatadi. Qandli diabet bilan kasallangan odamlar "diabet" deb ataladi.
+<br><br>
+Glyukoza do'konlarda va supermarketlarda mavjud bo'lgan oddiy shakar emas. Glyukoza bizning tanamiz energiya manbai sifatida foydalanadigan tabiiy uglevoddir. Supermarketlarda sotiladigan shakar turi saxaroza deb ataladi va glyukozadan ancha farq qiladi. Glyukozaning yuqori konsentratsiyasini alkogolsiz ichimliklar va mevalarda topish mumkin.
+<br><br>
+Qondagi glyukoza darajasi bir nechta gormonlar tomonidan boshqariladi. Gormonlar tanadagi kimyoviy moddalar bo'lib, hujayralardan boshqa hujayralarga xabarlar yuboradi. Insulin - oshqozon osti bezi tomonidan ishlab chiqariladigan gormon. Ovqatlanayotganda oshqozon osti bezi tanadagi boshqa hujayralarga xabar yuborish uchun insulin ishlab chiqaradi. Ushbu insulin hujayralarga qondan glyukoza olishini aytadi. Glyukoza hujayralar tomonidan energiya uchun ishlatiladi. Darhol kerak bo'lmagan qo'shimcha glyukoza ba'zi hujayralarda glikogen sifatida saqlanadi. Siz ovqatlanmasangiz, hujayralar energiya sifatida foydalanish uchun saqlangan glikogenni glyukozaga aylantiradi.</p>
+  </section>
+  <section id="management">
+    <h2>Boshqarish</h2>
+    <p>Yuqori qon glyukozasidan kelib chiqadigan zarar tufayli diabetes mellitusni davolash muhimdir. Maqsad qondagi glyukoza darajasini normal saqlashdir. Qon glyukozasining normal diapazoni 80-120 mg / dL (qonning dekilitri uchun milligramm glyukoza) yoki 3,5-7 mmol / l (qon uchun millimol). Bular bir xil narsani aytishning turli usullari, xuddi yardlar va metrlar masofani o'lchashning turli birliklari kabi.
+<br><br>
+Qandli diabet bilan kasallanganlar qondagi glyukoza miqdorini tez-tez tekshirishlari kerak. Bu ularning gipoglikemiya yoki giperglikemiyaga duchor bo'lmasligiga ishonch hosil qilishdir. Glyukometr - bu qondagi glyukoza darajasini tekshiradigan akkumulyatorli o'lchash moslamasi. Qandli diabet bilan og'rigan bemorlar ko'pincha o'zlari bilan glyukometr olib yurishadi va kuniga bir necha marta qon shakar darajasini tekshiradilar. Bundan tashqari, ular qattiq ich qotishi va tez-tez siyishdan aziyat chekishi mumkin.
+<br><br>
+Shifokorlar gemoglobin A1C deb ataladigan qon testidan ham foydalanishlari mumkin. Bu ba'zan Hgb-A1C yoki boshqa yo'llar bilan yoziladi; standart nom yo'q. Bu shifokorga so'nggi 90 kun ichida o'rtacha qon glyukoza darajasi qanday bo'lganini aytadi. Agar daraja juda yuqori bo'lsa, bu yangi dori-darmonlarni, turli dori dozalarini yoki yaxshiroq ovqatlanish kerakligini ko'rsatishi mumkin.
+<br><br>
+Qandli diabet bilan og'rigan bemorlarda diabetning asoratlari mavjudligini kuzatish kerak. Ko'zlardagi qon tomirlarining shikastlanishini tekshirish uchun ular muntazam ravishda ko'z shifokoriga murojaat qilishlari kerak. Agar bu erta topilmasa va davolanmasa, u ko'rlikka olib kelishi mumkin. Ular siydik yoki qonni buyrak shikastlanishi belgilari uchun muntazam tekshirib turishlari kerak. Hech bo'lmaganda har kuni oyoqlarini kesish, ko'karishlar, pufakchalar va hokazolarni tekshirishlari kerak. Va ular oyoqlarini asab shikastlanishi, qon aylanishi bilan bog'liq muammolar va infektsiyalar uchun muntazam ravishda tekshirib turishlari kerak.</p>
+  </section>
+  <section id="prevention">
+    <h2>Profilaktika</h2>
+    <p>Qandli diabetda eng muhim maqsad qon glyukoza darajasini imkon qadar me'yorga yaqin tutishdir. Qandli diabet darajasiga g'amxo'rlik qilish xabardorlikni talab qiladi. Siz qon shakaringizning holatini bilishingiz kerak, masalan, ko'tarilgan yoki tushganda. Odatda ovqatdan keyin ko'tariladi va mashqdan keyin pasayadi, shuning uchun uni oqilona engish ko'pincha murakkab va odatda g'amxo'rlik va o'ylashni talab qiladi. Davolash 1-toifa va 2-toifa diabet o'rtasida farq qiladi. 1-toifa diabetga chalingan odamlar insulin bilan davolanadilar. 2-toifali odamlar odatda parhez, jismoniy mashqlar va vazn yo'qotish bilan boshlanadi, ehtimol dori-darmonlarga o'tadi (va oddiy bo'lmasa ham, insulin).
+<br><br>
+Ta'lim diabetning ikkala turi uchun ham muhimdir. Qandli diabetga chalinganlar dietani o'rganishlari kerak. Ular turli xil oziq-ovqatlarda qancha uglevod, oqsil va yog' borligini hisoblash va kuzatishni o'rganadilar. Ular ovqatlanishni to'g'ri miqdorda uglevodlar, oqsillar va yog'larga ega bo'lish uchun rejalashtirishadi. 1-toifali bemorlar ovqatdan oldin qancha insulin iste'mol qilishini ular qancha ovqatlanishiga qarab qaror qilishlari mumkin.
+<br><br>
+Qandli diabet bilan og'rigan bemorlar jismoniy mashqlar haqida ham ehtiyot bo'lishlari kerak. Mashq qilish sog'lom bo'lish uchun muhim, ammo intensiv yoki uzoq muddatli mashqlar gipoglikemiyaga olib kelishi mumkin. Natijada, diabetga chalinganlar mashqlarni diqqat bilan rejalashtirishlari kerak.
+<br><br>
+Qon glyukoza darajasini nazorat qilishdan tashqari, boshqa davolash usullari ham talab qilinishi mumkin. Qandli diabetda ko'pincha qon tomirlari kasalliklari mavjud, shuning uchun qon tomirlariga ta'sir qilishi mumkin bo'lgan boshqa kasalliklarga e'tibor berish kerak. Qandli diabet bilan og'rigan odamlarda yuqori qon bosimi (gipertenziya) va yuqori xolesterinni davolash odatdagidan ko'ra muhimroqdir. Bu ikkala kasallik ham qon tomirlariga zarar etkazadi. Qandli diabet uchun davolash maqsadlari o'zgarishi mumkin. Masalan, diabet kasalligi bo'lmagan odamlarda qon bosimi 140/90 yoki undan past bo'lishi kerak. Qandli diabetda u 130/80 yoki undan kam bo'lishi kerak.</p>
+  </section>
+  <section id="resources">
+    <h2>Manba</h2>
+    <p>Diabet haqida ko'proq ma'lumot olish uchun quyidagi manbalarga murojaat qiling:</p>
+    <ul>
+      <li><a href="https://www.diabetes.org/">American Diabetes Association</a></li>
+      <li><a href="https://www.who.int/health-topics/diabetes#tab=tab_1">World Health Organization</a></li>
+    </ul>
+  </section>
+  <footer>
+    <p>&copy; 2023 Diabetni Tushunish va Boshqarish</p>
+  </footer>
+</body>
+
+</html>

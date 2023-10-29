@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      flex: 1;
+      margin-bottom: 10px;
+    }
+
+    input {
+      flex: 2;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Reset CSS to remove default margins and paddings */
+    body,
+    h1,
+    h2,
+    p,
+    ul,
+    li,
+    form,
+    label,
+    input,
+    select,
+    button {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Apply a background color and text color to the body */
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Style the header */
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Style the calculator section */
+    #calculator {
+      background-color: white;
+      padding: 20px;
+      margin: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Style the form elements */
+    form {
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Style the result section */
+    #result {
+      margin-top: 20px;
+    }
+
+    /* Style the footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    /* Reset CSS to remove default margins and paddings */
+    body,
+    h1,
+    h2,
+    p,
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Apply a background color and text color to the body */
+    body {
+      background-color: #f0f0f0;
+      /* Background color */
+      font-family: Arial, sans-serif;
+      /* Font family */
+      color: #333;
+      /* Text color */
+    }
+
+    /* Style the header */
+    header {
+      background-color: #007bff;
+      /* Header background color */
+      color: white;
+      /* Header text color */
+      text-align: center;
+      /* Center-align text */
+      padding: 20px;
+      /* Add padding to header */
+    }
+
+    /* Style the navigation menu */
+    nav {
+      background-color: #333;
+      /* Nav background color */
+    }
+
+    nav ul {
+      list-style-type: none;
+      /* Remove list bullets */
+      padding: 10px 0;
+      /* Add padding to the top and bottom */
+    }
+
+    nav li {
+      display: inline;
+      /* Display list items inline */
+      margin-right: 20px;
+      /* Add margin between menu items */
+    }
+
+    nav a {
+      text-decoration: none;
+      /* Remove underline from links */
+      color: white;
+      /* Link text color */
+      font-weight: bold;
+      /* Make links bold */
+    }
+
+    /* Style the sections */
+    section {
+      padding: 20px;
+      /* Add padding to sections */
+      background-color: white;
+      /* Section background color */
+      margin-bottom: 20px;
+      /* Add margin between sections */
+    }
+
+    /* Style the footer */
+    footer {
+      background-color: #333;
+      /* Footer background color */
+      color: white;
+      /* Footer text color */
+      text-align: center;
+      /* Center-align text */
+      padding: 10px 0;
+      /* Add padding to footer */
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Diabetni Baholash</h1>
+    <p>Diabet riskingizni baholang va salomat yurish uchun maslahatlar</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="{% url 'home'%}">Bosh sahifa</a></li>
+      <li><a href="{% url 'predict'%}">Diabetni baholash</a></li>
+      <li><a href="#prevention">Profilaktika</a></li>
+      <li><a href="#resources">Manba</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>Diabetni Baholash</h1>
+    <form id="diabetes-form" action="result">
+      <label for="pregnancies">Homiladorlik:</label>
+      <input type="text" name="n1" required>
+
+      <label for="glucose">Glyukoza:</label>
+      <input type="text" name="n2" required>
+
+      <label for="bloodpressure">Qon bosimi:</label>
+      <input type="text" name="n3" required>
+
+      <label for="skinthickness">Tana qalami:</label>
+      <input type="text" name="n4" required>
+
+      <label for="insulin">Insulin:</label>
+      <input type="text" name="n5" required>
+
+      <label for="bmi">BMI:</label>
+      <input type="text" name="n6" required>
+
+      <label for="age">Yosh:</label>
+      <input type="text" name="n7" required>
+
+      <label for="diabetes-predigree">Diabet tarixi:</label>
+      <input type="text" name="n8" required>
+
+      <input type="submit" value="Baholash">
+
+    </form>
+    <p>Natija: <span>{{result2}}</span></p>
+  </div>
+
+</body>
+
+</html>
